@@ -57,3 +57,5 @@ dkms.conf
 /sdls/macos/include
 /sdls/ios/include
 /sdls/ios-sim/include
+/rust/main/target
+rust/main/Cargo.lock
