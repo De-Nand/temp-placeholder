@@ -59,3 +59,9 @@ dkms.conf
 /sdls/ios-sim/include
 /rust/main/target
 rust/main/Cargo.lock
+.DS_Store
+/sdls/ios/lib/cmake
+/zig/.zig-cache
+/zig/zig-out
+/sdls/ios/share
+/sdls/ios/lib/pkgconfig
