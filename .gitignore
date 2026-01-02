@@ -65,3 +65,8 @@ rust/main/Cargo.lock
 /zig/zig-out
 /sdls/ios/share
 /sdls/ios/lib/pkgconfig
+/xcode/main/main.xcodeproj/project.xcworkspace
+c/main
+/rust/main/SDL3
+/sdls/macos/SDL
+/target/rust-analyzer
