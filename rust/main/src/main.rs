@@ -34,19 +34,44 @@ fn main() {
         println!("renderer: {:?}", &renderer.as_ref());
 
         let mut e = MaybeUninit::<SDL_Event>::uninit();
+
+        let mut rects: Vec<SDL_FRect> = vec![];
+        setupGame(rects);
+
         while running == true {
             count = count + 1;
             SDL_SetRenderDrawColor(renderer, 0, 0, 0, 100);
             SDL_RenderClear(renderer);
+
             while true == SDL_PollEvent(e.as_mut_ptr()) {
                 let event = e.assume_init();
-                if event.type_ == 0x100 {
+                if event.type_ == SDL_EventType_SDL_EVENT_QUIT {
                     running = false;
                 }
             }
 
+            SDL_SetRenderDrawColor(renderer, 200, 0, 10, 255);
+            //const reference_rect = rect_other.;
+            for rect in rects {
+                SDL_RenderFillRect(renderer, &rect);
+            }
             SDL_RenderPresent(renderer);
         }
     }
     println!("Hello, world!");
+}
+
+fn setupGame(mut rectsVec: Vec<SDL_FRect>) {
+    rectsVec.push(SDL_FRect {
+        x: 100.0,
+        y: 100.0,
+        w: 100.0,
+        h: 200.0,
+    });
+    rectsVec.push(SDL_FRect {
+        x: 500.0,
+        y: 500.0,
+        w: 100.0,
+        h: 200.0,
+    });
 }
